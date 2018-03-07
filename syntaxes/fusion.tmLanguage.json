@@ -1,0 +1,192 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Fusion",
+  "patterns": [
+		{
+			"include": "#comments"
+		},
+    {
+      "include": "#operators"
+    },
+    {
+      "include": "#strings"
+		},
+		{
+      "include": "#expression"
+    },
+    {
+      "include": "#prototype-definition"
+		},
+		{
+      "include": "#preprocessor"
+		},
+		{
+      "include": "#meta-property"
+		},
+		{
+      "include": "#property"
+    }
+  ],
+  "repository": {
+		"comments": {
+			"patterns": [{
+				"name": "comment.block.fusion",
+				"begin": "/\\*",
+				"beginCaptures": {
+					"0": {
+						"name": "punctuation.definition.comment.begin.fusion"
+					}
+				},
+				"end": "\\*/",
+				"endCaptures": {
+					"0": {
+						"name": "punctuation.definition.comment.end.fusion"
+					}
+				}
+			}, {
+				"begin": "(^[ \t]+)?(?=//)",
+				"beginCaptures": {
+					"1": {
+						"name": "punctuation.whitespace.comment.leading.fusion"
+					}
+				},
+				"end": "(?!\\G)",
+				"patterns": [{
+					"name": "comment.line.double-slash.fusion",
+					"begin": "//",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.comment.fusion"
+						}
+					},
+					"end": "\n"
+				}]
+			}, {
+				"begin": "(^[ \t]+)?(?=#)",
+				"beginCaptures": {
+					"1": {
+						"name": "punctuation.whitespace.comment.leading.fusion"
+					}
+				},
+				"end": "(?!\\G)",
+				"patterns": [{
+					"name": "comment.line.hash.fusion",
+					"begin": "#",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.comment.fusion"
+						}
+					},
+					"end": "\n"
+				}]
+			}]
+		},
+    "operators": {
+      "patterns": [
+        {
+          "name": "keyword.operator.fusion",
+          "match": "\\b(<|>|=)\\b"
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "name": "string.quoted.double.fusion",
+          "begin": "\"",
+          "end": "\"",
+          "patterns": [
+            {
+              "name": "constant.character.escape.fusion",
+              "match": "\\\\."
+            }
+          ]
+        },
+        {
+          "name": "string.quoted.single.fusion",
+          "begin": "'",
+          "end": "'",
+          "patterns": [
+            {
+              "name": "constant.character.escape.fusion",
+              "match": "\\\\."
+            }
+          ]
+        }
+      ]
+		},
+    "prototype-definition": {
+      "begin": "(prototype)\\(",
+      "end": "\\)",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.other.fusion"
+        }
+      },
+      "patterns": [
+        {
+          "name": "entity.name.type.fusion",
+          "match": "\\b[^\\)]+\\b"
+        }
+      ]
+		},
+		"expression": {
+			"begin": "(\\$\\{)",
+			"end": "(\\})",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.other.fusion"
+				}
+			},
+			"endCaptures": {
+				"1": {
+					"name": "keyword.other.fusion"
+				}
+			},
+			"patterns": [{
+				"include": "source.js"
+			}]
+		},
+		"preprocessor": {
+			"begin": "([a-zA-Z_-]+)(`)",
+			"beginCaptures": {
+				"1": {
+					"name": "support.function.fusion"
+				},
+				"2": {
+					"name": "string.quoted.other"
+				}
+			},
+			"end": "(`)",
+			"endCaptures": {
+				"1": {
+					"name": "string.quoted.other"
+				}
+			},
+			"patterns": [{
+				"include": "text.xml"
+			}]
+		},
+		"meta-property": {
+			"patterns": [{
+				"match": "(\\@[a-zA-Z_-]+)\\s*(=|\\{)",
+				"captures": {
+					"1": {
+						"name": "entity.other.attribute-name.fusion"
+					}
+				}
+			}]
+		},
+		"property": {
+			"patterns": [{
+				"match": "([a-zA-Z_-]+)\\s*(=|\\{)",
+				"captures": {
+					"1": {
+						"name": "variable.name.fusion"
+					}
+				}
+			}]
+		}
+  },
+  "scopeName": "source.fusion"
+}
