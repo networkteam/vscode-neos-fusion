@@ -9,22 +9,10 @@
       "include": "#operators"
     },
     {
-      "include": "#strings"
-		},
-		{
-      "include": "#expression"
-    },
-    {
       "include": "#prototype-definition"
 		},
 		{
-      "include": "#preprocessor"
-		},
-		{
-      "include": "#meta-property"
-		},
-		{
-      "include": "#property"
+      "include": "#property-definition"
     }
   ],
   "repository": {
@@ -125,8 +113,7 @@
       },
       "patterns": [
         {
-          "name": "entity.name.type.fusion",
-          "match": "\\b[^\\)]+\\b"
+          "include": "#object-name"
         }
       ]
 		},
@@ -144,7 +131,7 @@
 				}
 			},
 			"patterns": [{
-				"include": "source.js"
+				"include": "source.js#expression"
 			}]
 		},
 		"preprocessor": {
@@ -167,24 +154,77 @@
 				"include": "text.xml"
 			}]
 		},
-		"meta-property": {
+		"property-path": {
 			"patterns": [{
-				"match": "(\\@[a-zA-Z_-]+)\\s*(=|\\{)",
-				"captures": {
+				"begin": "(@[a-zA-Z0-9:_\\-]+)|([a-zA-Z0-9:_\\-]+)",
+				"beginCaptures": {
 					"1": {
 						"name": "entity.other.attribute-name.fusion"
+					},
+					"2": {
+						"name": "variable.other.fusion"
 					}
-				}
+				},
+				"end": "\\G",
+				"patterns": [{
+					"match": "\\."
+				}, {
+					"include": "#prototype-definition"
+				}, {
+					"include": "#strings"
+				}]
 			}]
 		},
-		"property": {
+		"property-definition": {
 			"patterns": [{
-				"match": "([a-zA-Z_-]+)\\s*(=|\\{)",
-				"captures": {
+				"include": "#property-path"
+			}, {
+				"begin": "=\\s*",
+				"beginCaptures": {
 					"1": {
-						"name": "variable.name.fusion"
+						"name": "variable.other.fusion"
 					}
-				}
+				},
+				"end": "(?!\\G)",
+				"patterns": [{
+					"include": "#preprocessor"
+				}, {
+					"include": "#strings"
+				}, {
+					"include": "#expression"
+				}, {
+					"include": "#boolean-literal"
+				}, {
+					"include": "#null-literal"
+				}, {
+					"include": "#numeric-literal"
+				}, {
+					"include": "#object-name"
+				}]
+			}]
+		},
+		"object-name": {
+			"patterns": [{
+				"match": "[a-zA-Z0-9.:]+",
+				"name": "entity.name.type.fusion"
+			}]
+		},
+		"boolean-literal": {
+			"patterns": [{
+				"match": "(TRUE|FALSE|true|false)",
+				"name": "constant.language.fusion"
+			}]
+		},
+		"numeric-literal": {
+			"patterns": [{
+				"match": "-?\\d+(\\.\\d+)?",
+				"name": "constant.numeric.fusion"
+			}]
+		},
+		"null-literal": {
+			"patterns": [{
+				"match": "(NULL|null)",
+				"name": "constant.other.fusion"
 			}]
 		}
   },
