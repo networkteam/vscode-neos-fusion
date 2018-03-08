@@ -1,7 +1,12 @@
 {
     "name": "neos-fusion",
-    "displayName": "neos-fusion",
+    "displayName": "Neos Fusion language support",
     "description": "Fusion and Eel language support for Neos CMS",
+    "icon": "images/neos-fusion-icon.png",
+    "galleryBanner": {
+        "color": "#26224C",
+        "theme": "dark"
+    },
     "repository": {
         "type": "git",
         "url": "https://github.com/networkteam/vscode-neos-fusion.git"
