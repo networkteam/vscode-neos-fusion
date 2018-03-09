@@ -8,6 +8,10 @@ This extension adds language support for Fusion for [Neos CMS](https://www.neos.
 
 ## Release Notes
 
+### 1.0.3
+
+Better AFX highlighting with custom XML grammar
+
 ### 1.0.2
 
 Icon added
