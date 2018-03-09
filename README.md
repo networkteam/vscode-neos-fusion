@@ -5,6 +5,7 @@ This extension adds language support for Fusion for [Neos CMS](https://www.neos.
 ## Features
 
 * Basic syntax highlighting for Fusion
+* [AFX](https://github.com/neos/fusion-afx) Syntax support
 
 ## Release Notes
 
