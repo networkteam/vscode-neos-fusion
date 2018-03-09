@@ -11,6 +11,9 @@
     {
       "include": "#prototype-definition"
 		},
+    {
+      "include": "#include"
+		},
 		{
       "include": "#property-definition"
     }
@@ -180,11 +183,6 @@
 				"include": "#property-path"
 			}, {
 				"begin": "=\\s*",
-				"beginCaptures": {
-					"1": {
-						"name": "variable.other.fusion"
-					}
-				},
 				"end": "(?!\\G)",
 				"patterns": [{
 					"include": "#preprocessor"
@@ -225,6 +223,19 @@
 			"patterns": [{
 				"match": "(NULL|null)",
 				"name": "constant.other.fusion"
+			}]
+		},
+		"include": {
+			"patterns": [{
+				"match": "^(include):\\s*(.*)\\s*$",
+				"captures": {
+					"1": {
+						"name": "keyword.other.fusion"
+					},
+					"2": {
+						"name": "string.unquoted"
+					}
+				}
 			}]
 		}
   },
