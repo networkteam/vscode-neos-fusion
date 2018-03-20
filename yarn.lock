@@ -1854,6 +1854,38 @@ vinyl@~2.0.1:
     remove-trailing-separator "^1.0.1"
     replace-ext "^1.0.0"
 
+vscode-jsonrpc@^3.6.0:
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/vscode-jsonrpc/-/vscode-jsonrpc-3.6.0.tgz#848d56995d5168950d84feb5d9c237ae5c6a02d4"
+
+vscode-languageclient@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/vscode-languageclient/-/vscode-languageclient-4.0.0.tgz#635f5bfbcfa1385dae489b394857f1db8b459a7d"
+  dependencies:
+    vscode-languageserver-protocol "^3.6.0"
+
+vscode-languageserver-protocol@^3.6.0:
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/vscode-languageserver-protocol/-/vscode-languageserver-protocol-3.6.0.tgz#579642cdcccf74b0cd771c33daa3239acb40d040"
+  dependencies:
+    vscode-jsonrpc "^3.6.0"
+    vscode-languageserver-types "^3.6.0"
+
+vscode-languageserver-types@^3.6.0:
+  version "3.6.1"
+  resolved "https://registry.yarnpkg.com/vscode-languageserver-types/-/vscode-languageserver-types-3.6.1.tgz#4bc06a48dff653495f12f94b8b1e228988a1748d"
+
+vscode-languageserver@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/vscode-languageserver/-/vscode-languageserver-4.0.0.tgz#8b792f0d6d10acfe363d02371ed4ce53d08af88a"
+  dependencies:
+    vscode-languageserver-protocol "^3.6.0"
+    vscode-uri "^1.0.1"
+
+vscode-uri@^1.0.1:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/vscode-uri/-/vscode-uri-1.0.3.tgz#631bdbf716dccab0e65291a8dc25c23232085a52"
+
 vscode@^1.1.6:
   version "1.1.13"
   resolved "https://registry.yarnpkg.com/vscode/-/vscode-1.1.13.tgz#dcea0c5f3ec1ff6eca333216b4b20dd994d18d9a"

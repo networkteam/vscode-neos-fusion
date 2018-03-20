@@ -58,6 +58,29 @@
                 "path": "./snippets/neos-neos-objects.json"
             }
         ]
+        "configuration": {
+			"type": "object",
+			"title": "Neos Fusion",
+			"properties": {
+				"neosFusion.maxNumberOfProblems": {
+					"scope": "resource",
+					"type": "number",
+					"default": 100,
+					"description": "Controls the maximum number of problems produced by the server."
+				},
+				"neosFusion.trace.server": {
+					"scope": "window",
+					"type": "string",
+					"enum": [
+						"off",
+						"messages",
+						"verbose"
+					],
+					"default": "off",
+					"description": "Traces the communication between VSCode and the language server."
+				}
+			}
+        }
     },
     "activationEvents": [
         "onLanguage:fusion",
@@ -80,6 +103,8 @@
         "vscode": "^1.1.6"
     },
     "dependencies": {
-        "fusion-parser": "^1.0.0"
+        "fusion-parser": "^1.0.0",
+        "vscode-languageclient": "^4.0.0",
+        "vscode-languageserver": "^4.0.0"
     }
 }
