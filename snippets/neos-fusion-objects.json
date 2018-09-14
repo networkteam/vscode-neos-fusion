@@ -1,0 +1,178 @@
+{
+	"Neos.Fusion:Array": {
+		"prefix": "array",
+		"body":[
+			"Neos.Fusion:Array {",
+				"\t$1",
+			"}"
+		]
+	},
+
+	"Neos.Fusion:Collection": {
+		"prefix": "collection",
+		"body": [
+			"Neos.Fusion:Collection {",
+				"\tcollection = ${$1}",
+				"\titemRenderer = $2",
+			"}"
+		]
+	},
+
+	"Neos.Fusion:RawCollection": {
+		"prefix": "rawCollection",
+		"body": [
+			"Neos.Fusion:RawCollection {",
+				"\tcollection = ${$1}",
+				"\titemRenderer = $2",
+			"}"
+		]
+	},
+
+	"Neos.Fusion:Case": {
+		"prefix": "case",
+		"body": [
+			"Neos.Fusion:Case {",
+				"\t${1:key} {",
+					"\t\tcondition = ${2:condition}",
+					"\t\t${3|type,renderPath,renderer|} = ${4}",
+				"\t}",
+
+				"\tdefault {",
+					"\t\tcondition = true",
+					"\t\t${5|type,renderPath,renderer|} = ${6}",
+				"\t}",
+			"}"
+		]
+	},
+
+	"Neos.Fusion:Renderer": {
+		"prefix": "renderer",
+		"body": [
+			"Neos.Fusion:Renderer {",
+				"\t${1|type,renderPath,renderer|} = $2",
+			"}"
+		]
+	},
+
+	"Neos.Fusion:Debug": {
+		"prefix": "debug",
+		"body": [
+			"Neos.Fusion:Debug {",
+				"\tvalue = ${1}",
+			"}"
+		]
+	},
+
+	"Neos.Fusion:Component": {
+		"prefix": "component",
+		"body": [
+			"Neos.Fusion:Component {",
+				"\trenderer = ${1}",
+			"}"
+		]
+	},
+
+	"Neos.Fusion:Augmenter": {
+		"prefix": "augmenter",
+		"body": [
+			"Neos.Fusion:Augmenter {",
+				"\tcontent = ${1}",
+				"\t${2|class,is,data|} = ${3}",
+			"}"
+		]
+	},
+
+	"Neos.Fusion:Template": {
+		"prefix": "template",
+		"body": [
+			"Neos.Fusion:Template {",
+				"\ttemplatePath =${1| , 'resource://'|}",
+			"}"
+		]
+	},
+
+	"Neos.Fusion:Value": {
+		"prefix": "value",
+		"body": [
+			"Neos.Fusion:Value {",
+				"\tvalue = $1",
+			"}"
+		]
+	},
+
+	"Neos.Fusion:RawArray": {
+		"prefix": "rawArray",
+		"body": [
+			"Neos.Fusion:RawArray {",
+				"\t${1:key} = $2",
+			"}"
+		]
+	},
+
+	"Neos.Fusion:Tag": {
+		"prefix": "tag",
+		"body": [
+			"Neos.Fusion:Tag {",
+				"\ttagName = '$1'",
+				"\tcontent = $2",
+			"}"
+		]
+	},
+
+	"Neos.Fusion:Attributes": {
+		"prefix": "attributes",
+		"body": [
+			"Neos.Fusion:Attributes {",
+				"\tid = '$1'",
+				"\tclass = $2",
+			"}"
+		]
+	},
+
+	"Neos.Fusion:Http.Message": {
+		"prefix": "httpMessage",
+		"body": [
+			"Neos.Fusion:Http.Message {",
+				"\t$1",
+			"}"
+		]
+	},
+
+	"Neos.Fusion:Http.ResponseHead": {
+		"prefix": "httpResponseHead",
+		"body": [
+			"Neos.Fusion:Http.ResponseHead {",
+				"\tstatusCode = $1",
+			"}"
+		]
+	},
+
+	"Neos.Fusion:UriBuilder": {
+		"prefix": "uriBuilder",
+		"body": [
+			"Neos.Fusion:UriBuilder {",
+				"\tpackage = '${1}'",
+				"\tcontroller = '${2}'",
+				"\taction = '${3}'",
+			"}"
+		]
+	},
+
+	"Neos.Fusion:ResourceUri": {
+		"prefix": "resourceUri",
+		"body": [
+			"Neos.Fusion:ResourceUri {",
+				"\tpath = 'resource://$1'",
+			"}"
+		]
+	},
+
+	"Neos.Fusion:CanRender": {
+		"prefix": "canRender",
+		"body": [
+			"Neos.Fusion:CanRender {",
+				"\ttype = '$1'",
+			"}"
+		]
+	}
+}
