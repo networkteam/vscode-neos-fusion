@@ -6,6 +6,7 @@ This extension adds language support for Fusion for [Neos CMS](https://www.neos.
 
 * Basic syntax highlighting for Fusion
 * [AFX](https://github.com/neos/fusion-afx) Syntax support
+* Code-Snippets for Fusion-Objects
 
 ## Release Notes
 
