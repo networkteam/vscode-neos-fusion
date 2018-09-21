@@ -42,10 +42,22 @@
                 "path": "./syntaxes/fusion.tmLanguage.json"
             }
         ],
-        "commands": [{
-            "command": "extension.sayHello",
-            "title": "Hello World"
-        }]
+        "commands": [
+            {
+                "command": "extension.sayHello",
+                "title": "Hello World"
+            }
+        ],
+        "snippets": [
+            {
+                "language": "fusion",
+                "path": "./snippets/neos-fusion-objects.json"
+            },
+            {
+                "language": "fusion",
+                "path": "./snippets/neos-neos-objects.json"
+            }
+        ]
     },
     "activationEvents": [
         "onLanguage:fusion",

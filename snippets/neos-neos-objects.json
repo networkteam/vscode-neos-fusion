@@ -1,0 +1,189 @@
+{
+	"Neos.Neos:Page": {
+		"prefix": "page",
+		"body":[
+			"Neos.Neos:Page {",
+				"\thead {",
+					"\t\t$1",
+				"\t}",
+				"",
+				"\tbody {",
+					"\t\t$2",
+				"\t}",
+			"}"
+		]
+	},
+
+	"Neos.Neos:ContentCollection": {
+		"prefix": "contentCollection",
+		"body":[
+			"Neos.Neos:ContentCollection {",
+				"\tnodePath = '$1'",
+			"}"
+		]
+	},
+
+	"Neos.Neos:PrimaryContent": {
+		"prefix": "primaryContent",
+		"body":[
+			"Neos.Neos:PrimaryContent {",
+				"\tnodePath = '$1'",
+			"}"
+		]
+	},
+
+	"Neos.Neos:ContentCase": {
+		"prefix": "contentCase",
+		"body":[
+			"Neos.Neos:ContentCase {",
+				"\t$1",
+			"}"
+		]
+	},
+
+	"Neos.Neos:Content": {
+		"prefix": "content",
+		"body":[
+			"Neos.Neos:Content {",
+				"\ttemplatePath = 'resource://$1'",
+			"}"
+		]
+	},
+
+	"Neos.Neos:ContentComponent": {
+		"prefix": "contentComponent",
+		"body":[
+			"Neos.Neos:ContentComponent {",
+				"\trenderer = $1",
+			"}"
+		]
+	},
+
+	"Neos.Neos:Editable": {
+		"prefix": "editable",
+		"body":[
+			"Neos.Neos:Editable {",
+				"\tproperty = $1",
+			"}"
+		]
+	},
+
+	"Neos.Neos:Plugin": {
+		"prefix": "plugin",
+		"body":[
+			"Neos.Neos:Plugin {",
+				"\tpackage = $1",
+			"}"
+		]
+	},
+
+	"Neos.Neos:Menu": {
+		"prefix": "menu",
+		"body":[
+			"Neos.Neos:Menu {",
+				"\ttemplatePath = $1",
+				"\tentryLevel = $2",
+				"\tmaximumLevels = $3",
+				"\tstartingPoint = $4",
+				"\tfilter = $5",
+				"\trenderHiddenInIndex = ${6:false}",
+				"\tnormal.attributes = $7",
+				"\tactive.attributes = $8",
+				"\tcurrent.attributes = $9",
+			"}"
+		]
+	},
+
+	"Neos.Neos:BreadcrumbMenu": {
+		"prefix": "breadcrumbMenu",
+		"body":[
+			"Neos.Neos:Menu {",
+				"\ttemplatePath = $1",
+				"\tentryLevel = $2",
+				"\tmaximumLevels = $3",
+				"\tstartingPoint = $4",
+				"\tfilter = $5",
+				"\trenderHiddenInIndex = ${6:false}",
+				"\tnormal.attributes = $7",
+				"\tactive.attributes = $8",
+				"\tcurrent.attributes = $9",
+			"}"
+		]
+	},
+
+	"Neos.Neos:DimensionsMenu": {
+		"prefix": "dimensionsMenu",
+		"body":[
+			"Neos.Neos:Menu {",
+				"\ttemplatePath = $1",
+				"\tdimension = $2",
+				"\tpresets = $3",
+				"\tincludeAllPresets = ${4:false}",
+				"\trenderHiddenInIndex = ${5:true}",
+			"}"
+		]
+	},
+
+	"Neos.Neos:NodeUri": {
+		"prefix": "nodeUri",
+		"body":[
+			"Neos.Neos:NodeUri {",
+				"\tnode = $1",
+				"\tsection = $2",
+				"\tabsolute = ${3:false}",
+			"}"
+		]
+	},
+
+	"Neos.Neos:ImageUri": {
+		"prefix": "imageUri",
+		"body":[
+			"Neos.Neos:ImageUri {",
+				"\tasset = $1",
+				"\tmaximumWidth = $2",
+				"\tmaximumHeight = $3",
+				"\tallowCropping = ${4:false}",
+				"\tallowUpScaling = ${5:false}",
+			"}"
+		]
+	},
+
+	"Neos.Neos:ImageTag": {
+		"prefix": "imageTag",
+		"body":[
+			"Neos.Neos:ImageTag {",
+				"\tasset = $1",
+				"\tmaximumWidth = $2",
+				"\tmaximumHeight = $3",
+				"\tallowCropping = ${4:false}",
+				"\tallowUpScaling = ${5:false}",
+				"\tattributes {",
+					"\t\talt = '$6'",
+				"\t}",
+			"}"
+		]
+	},
+
+	"Neos.Neos:ConvertUris": {
+		"prefix": "convertUris",
+		"body":[
+			"Neos.Neos:ConvertUris"
+		]
+	},
+
+	"Neos.Neos:ContentElementWrapping": {
+		"prefix": "contentElementWrapping",
+		"body":[
+			"Neos.Neos:ContentElementWrapping"
+		]
+	},
+
+	"Neos.Neos:ContentElementEditable": {
+		"prefix": "contentElementEditable",
+		"body":[
+			"Neos.Neos:ContentElementEditable {",
+				"\tproperty = $1",
+			"}"
+		]
+	}
+}
