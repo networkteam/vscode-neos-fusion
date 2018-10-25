@@ -22,7 +22,17 @@ documents.listen(connection);
 // in the passed params the rootUri  of the workspace plus the client capabilites.
 let workspaceRootUri: string | null;
 connection.onInitialize((params): InitializeResult => {
-  workspaceRootUri = params.rootUri;
+	workspaceRootUri = params.rootUri;
+
+	/**
+	 * TODO
+	 *
+	 * 1. Start indexing of all fusion files in workspace
+	 * 2. Parse files to a tree representation suitable for lookups by location (tree order by location)
+	 * 3. Index representations by URI for lookup per document
+	 * 4. Update index on content changes (re-parse documents for now)
+	 */
+
 	return {
 		capabilities: {
 			// Tell the client that the server works in FULL text document sync mode
