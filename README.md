@@ -10,6 +10,11 @@ This extension adds language support for Fusion for [Neos CMS](https://www.neos.
 
 ## Release Notes
 
+### 1.0.6
+
+* Add new fusion objects to code snippets
+* Security update to fix vulnerable dependencies
+
 ### 1.0.5
 
 Security update to fix vulnerable dependencies
