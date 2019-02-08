@@ -12,7 +12,7 @@
         "type": "git",
         "url": "https://github.com/networkteam/vscode-neos-fusion.git"
     },
-    "version": "1.0.5",
+    "version": "1.0.6",
     "publisher": "networkteam",
     "engines": {
         "vscode": "^1.20.0"
