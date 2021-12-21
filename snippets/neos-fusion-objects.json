@@ -107,11 +107,29 @@
 		]
 	},
 
+	"Neos.Fusion:DebugConsole": {
+		"prefix": "debugConsole",
+		"body": [
+			"Neos.Fusion:DebugConsole {",
+				"\tvalue = ${1}",
+			"}"
+		]
+	},
+
 	"Neos.Fusion:Component": {
 		"prefix": "component",
 		"body": [
 			"Neos.Fusion:Component {",
 				"\trenderer = ${1}",
+			"}"
+		]
+	},
+
+	"Neos.Fusion:Fragment": {
+		"prefix": "fragment",
+		"body": [
+			"Neos.Fusion:Fragment {",
+				"\tcontent = ${1}",
 			"}"
 		]
 	},
@@ -140,6 +158,27 @@
 		"body": [
 			"Neos.Fusion:Value {",
 				"\tvalue = $1",
+			"}"
+		]
+	},
+
+	"Neos.Fusion:Match": {
+		"prefix": "match",
+		"body": [
+			"Neos.Fusion:Match {",
+				"\t@subject = $1",
+				"\t@default = $2",
+					"\t\t${3:value} = $4",
+			"}"
+		]
+	},
+
+	"Neos.Fusion:Memo": {
+		"prefix": "memo",
+		"body": [
+			"Neos.Fusion:Memo {",
+				"\tdiscriminator = $1",
+				"\tvalue = $2",
 			"}"
 		]
 	},
