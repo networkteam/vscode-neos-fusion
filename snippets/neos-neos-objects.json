@@ -124,6 +124,48 @@
 		]
 	},
 
+	"Neos.Neos:MenuItems": {
+		"prefix": "menuItems",
+		"body":[
+			"Neos.Neos:MenuItems {",
+				"\tentryLevel = $1",
+				"\tmaximumLevels = $2",
+				"\tstartingPoint = $3",
+				"\tlastLevel = $4",
+				"\tfilter = $5",
+				"\trenderHiddenInIndex = ${6:false}",
+				"\titemCollection = $7",
+			"}"
+		]
+	},
+
+	"Neos.Neos:BreadcrumbMenuItems": {
+		"prefix": "breadcrumbMenuItems",
+		"body":[
+			"Neos.Neos:BreadcrumbMenuItems {",
+				"\tentryLevel = $1",
+				"\tmaximumLevels = $2",
+				"\tstartingPoint = $3",
+				"\tlastLevel = $4",
+				"\tfilter = $5",
+				"\trenderHiddenInIndex = ${6:false}",
+				"\titemCollection = $7",
+			"}"
+		]
+	},
+
+	"Neos.Neos:DimensionsMenuItems": {
+		"prefix": "dimensionsMenuItems",
+		"body":[
+			"Neos.Neos:DimensionsMenuItems {",
+				"\tdimension = $1",
+				"\tpresets = $2",
+				"\tincludeAllPresets = ${3:false}",
+				"\trenderHiddenInIndex = ${4:true}",
+			"}"
+		]
+	},
+
 	"Neos.Neos:NodeUri": {
 		"prefix": "nodeUri",
 		"body":[
@@ -131,6 +173,18 @@
 				"\tnode = $1",
 				"\tsection = $2",
 				"\tabsolute = ${3:false}",
+			"}"
+		]
+	},
+
+	"Neos.Neos:NodeLink": {
+		"prefix": "nodeLink",
+		"body":[
+			"Neos.Neos:NodeLink {",
+				"\tnode = $1",
+				"\tcontent = $2",
+				"\tsection = $3",
+				"\tabsolute = ${4:false}",
 			"}"
 		]
 	},
