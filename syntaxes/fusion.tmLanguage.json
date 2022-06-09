@@ -199,7 +199,7 @@
     "property-path": {
       "patterns": [
         {
-          "begin": "(@[\\w\\d:_\\-]+)|([\\w\\d:_\\-]+)|('[\\w\\d:_\\-#]+')|(\"[\\w\\d:_\\-#]+\")",
+          "begin": "(@[\\w\\d:_\\-]+)|([\\w\\d:_\\-]+)|('.*?')|(\".*?\")",
           "beginCaptures": {
             "1": {
               "name": "entity.other.attribute-name.fusion"
