@@ -199,13 +199,19 @@
     "property-path": {
       "patterns": [
         {
-          "begin": "(@[a-zA-Z0-9:_\\-]+)|([a-zA-Z0-9:_\\-]+)",
+          "begin": "(@[\\w\\d:_\\-]+)|([\\w\\d:_\\-]+)|('[\\w\\d:_\\-#]+')|(\"[\\w\\d:_\\-#]+\")",
           "beginCaptures": {
             "1": {
               "name": "entity.other.attribute-name.fusion"
             },
             "2": {
               "name": "variable.other.fusion"
+            },
+            "3": {
+              "name": "string.quoted.single.fusion"
+            },
+            "4": {
+              "name": "string.quoted.double.fusion"
             }
           },
           "end": "\\G",
