@@ -168,7 +168,7 @@
 			"Neos.Fusion:Match {",
 				"\t@subject = $1",
 				"\t@default = $2",
-					"\t\t${3:value} = $4",
+				"\t${3:value} = $4",
 			"}"
 		]
 	},
