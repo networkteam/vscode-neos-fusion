@@ -48,6 +48,7 @@ Initial release of neos-fusion
 
 ## Development
 
+- make sure to use node >= 16
 - run `npm install && npm run compile`
 - Open this folder in Visual Studio Code
 - then, inside "Run" in the menu, press "start debugging"
