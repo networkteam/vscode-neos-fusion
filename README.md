@@ -10,6 +10,12 @@ This extension adds language support for Fusion for [Neos CMS](https://www.neos.
 
 ## Release Notes
 
+### 2.1.0 
+* Update dependencies
+    - npm update within the boundaries of the package.json
+    - resolves dependabot alerts
+* Resolves a syntax highlighting issue with hashes in strings (see [#14](https://github.com/networkteam/vscode-neos-fusion/issues/14))
+
 ### 2.0.0
 
 * Support for Tailwind CSS, and proper HTML support in AFX blocks
