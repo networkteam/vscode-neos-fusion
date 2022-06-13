@@ -3,7 +3,18 @@
 		"prefix": "array",
 		"body":[
 			"Neos.Fusion:Array {",
-				"\t$1",
+				"\t// The Neos.Fusion:Array object has been renamed to Neos.Fusion:Join the old name is DEPRECATED",
+				"\t${1:key}",
+			"}"
+		]
+	},
+
+	"Neos.Fusion:Join": {
+		"prefix": "join",
+		"body":[
+			"Neos.Fusion:Join {",
+				"\t${1:key}",
+				"\t@glue = $2",
 			"}"
 		]
 	},
@@ -12,6 +23,7 @@
 		"prefix": "collection",
 		"body": [
 			"Neos.Fusion:Collection {",
+				"\t// The Neos.Fusion:Collection object is DEPRECATED use Neos.Fusion:Loop instead.",
 				"\tcollection = ${$1}",
 				"\titemRenderer = $2",
 			"}"
@@ -22,8 +34,40 @@
 		"prefix": "rawCollection",
 		"body": [
 			"Neos.Fusion:RawCollection {",
+				"\t// The Neos.Fusion:RawCollection object is DEPRECATED use Neos.Fusion:Map instead.",
 				"\tcollection = ${$1}",
 				"\titemRenderer = $2",
+			"}"
+		]
+	},
+
+	"Neos.Fusion:Loop": {
+		"prefix": "loop",
+		"body": [
+			"Neos.Fusion:Loop {",
+				"\titems = ${$1}",
+				"\titemRenderer = $2",
+				"\t@glue = $3",
+			"}"
+		]
+	},
+
+	"Neos.Fusion:Map": {
+		"prefix": "map",
+		"body": [
+			"Neos.Fusion:Map {",
+				"\titems = ${$1}",
+				"\titemRenderer = $2",
+			"}"
+		]
+	},
+
+	"Neos.Fusion:Reduce": {
+		"prefix": "reduce",
+		"body": [
+			"Neos.Fusion:Reduce {",
+				"\titems = ${$1}",
+				"\titemReducer = $2",
 			"}"
 		]
 	},
@@ -63,11 +107,29 @@
 		]
 	},
 
+	"Neos.Fusion:DebugConsole": {
+		"prefix": "debugConsole",
+		"body": [
+			"Neos.Fusion:DebugConsole {",
+				"\tvalue = ${1}",
+			"}"
+		]
+	},
+
 	"Neos.Fusion:Component": {
 		"prefix": "component",
 		"body": [
 			"Neos.Fusion:Component {",
 				"\trenderer = ${1}",
+			"}"
+		]
+	},
+
+	"Neos.Fusion:Fragment": {
+		"prefix": "fragment",
+		"body": [
+			"Neos.Fusion:Fragment {",
+				"\tcontent = ${1}",
 			"}"
 		]
 	},
@@ -100,10 +162,41 @@
 		]
 	},
 
+	"Neos.Fusion:Match": {
+		"prefix": "match",
+		"body": [
+			"Neos.Fusion:Match {",
+				"\t@subject = $1",
+				"\t@default = $2",
+				"\t${3:value} = $4",
+			"}"
+		]
+	},
+
+	"Neos.Fusion:Memo": {
+		"prefix": "memo",
+		"body": [
+			"Neos.Fusion:Memo {",
+				"\tdiscriminator = $1",
+				"\tvalue = $2",
+			"}"
+		]
+	},
+
 	"Neos.Fusion:RawArray": {
 		"prefix": "rawArray",
 		"body": [
 			"Neos.Fusion:RawArray {",
+				"\t// The Neos.Fusion:RawArray object has been renamed to Neos.Fusion:DataStructure the old name is DEPRECATED",
+				"\t${1:key} = $2",
+			"}"
+		]
+	},
+
+	"Neos.Fusion:DataStructure": {
+		"prefix": "dataStructure",
+		"body": [
+			"Neos.Fusion:DataStructure {",
 				"\t${1:key} = $2",
 			"}"
 		]
