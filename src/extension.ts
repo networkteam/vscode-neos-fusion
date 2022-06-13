@@ -1,25 +1,26 @@
 'use strict';
 
 import * as path from 'path';
-
-import { workspace, ExtensionContext } from 'vscode';
+import { workspace, ExtensionContext, commands, window } from 'vscode';
 import {
   LanguageClient,
   LanguageClientOptions,
   ServerOptions,
   TransportKind,
   RevealOutputChannelOn,
-} from 'vscode-languageclient';
+} from 'vscode-languageclient/node';
+
+let client: LanguageClient;
 
 export function activate(context: ExtensionContext) {
   // The server is implemented in node
-  let serverModule = context.asAbsolutePath(path.join('out', 'server.js'));
+  const serverModule = context.asAbsolutePath(path.join('out', 'server.js'));
   // The debug options for the server
-  let debugOptions = { execArgv: ['--nolazy', '--debug=6009'] };
+  const debugOptions = { execArgv: ['--nolazy', '--inspect=6009'] };
 
   // If the extension is launched in debug mode then the debug server options are used
   // Otherwise the run options are used
-  let serverOptions: ServerOptions = {
+  const serverOptions: ServerOptions = {
     run: { module: serverModule, transport: TransportKind.ipc },
     debug: {
       module: serverModule,
@@ -29,8 +30,8 @@ export function activate(context: ExtensionContext) {
   };
 
   // Options to control the language client
-  let clientOptions: LanguageClientOptions = {
-    // Register the server for Fusion documents
+  const clientOptions: LanguageClientOptions = {
+    // Register the server for plain text documents
     documentSelector: [{ scheme: 'file', language: 'fusion' }],
     synchronize: {
       // Synchronize the setting section 'neosFusion' to the server
@@ -55,18 +56,34 @@ export function activate(context: ExtensionContext) {
   // This line of code will only be executed once when your extension is activated
   console.log('Congratulations, your extension "neos-fusion" is now active!');
 
+  // The command has been defined in the package.json file
+  // Now provide the implementation of the command with  registerCommand
+  // The commandId parameter must match the command field in package.json
+  let disposable = commands.registerCommand('extension.sayHello', () => {
+    // The code you place here will be executed every time your command is executed
+
+    // Display a message box to the user
+    window.showInformationMessage('Hello World!');
+  });
+
+  context.subscriptions.push(disposable);
+
   // Create the language client and start the client.
-  let disposable = new LanguageClient(
+  client = new LanguageClient(
     'neosFusion',
     'Fusion Language Server',
     serverOptions,
     clientOptions
-  ).start();
+  );
 
-  // Push the disposable to the context's subscriptions so that the
-  // client can be deactivated on extension deactivation
-  context.subscriptions.push(disposable);
+  // Start the client. This will also launch the server
+  client.start();
 }
 
 // this method is called when your extension is deactivated
-export function deactivate() {}
+export function deactivate(): Thenable<void> | undefined {
+  if (!client) {
+    return undefined;
+  }
+  return client.stop();
+}
